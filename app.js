@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import mysql from "mysql";
 import express from "express";
+import cors from "cors";
 
 // GET DB Access credentials
 dotenv.config();
@@ -13,6 +14,7 @@ const pool = mysql.createPool({
 });
 
 const app = express();
+app.use(cors());
 
 // GET the list of all products
 app.get("/products/", (req, res) => {
