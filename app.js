@@ -6,10 +6,10 @@ import express from "express";
 dotenv.config();
 const pool = mysql.createPool({
   poolLimit: 10,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWD,
+  host: process.env.BSALE_DB_HOST,
+  database: process.env.BSALE_DB_NAME,
+  user: process.env.BSALE_DB_USER,
+  password: process.env.BSALE_DB_PASSWD,
 });
 
 const app = express();
