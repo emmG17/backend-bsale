@@ -28,7 +28,9 @@ app.get("/products/", (req, res) => {
 app.get("/products/:name", (req, res) => {
   let name = req.params.name;
   pool.query(
-    `SELECT * FROM product WHERE product.name LIKE ${pool.escape(name)}`,
+    `SELECT * FROM product WHERE product.name LIKE ${pool.escape(
+      "%" + name + "%"
+    )}`,
     (err, rows, fields) => {
       if (err) throw err;
       res.json({ products: rows });
