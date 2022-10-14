@@ -79,6 +79,4 @@ app.get("/category/:id", (req, res) => {
   );
 });
 
-app.listen(3000 || process.env.PORT, () => {
-  console.log("Listening on port 3000");
-});
+app.listen(process.env.PORT || 3000);
